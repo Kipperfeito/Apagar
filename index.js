@@ -1,12 +1,12 @@
 import express from 'express'
 const app = express()
 const port = 3000
-
+app.set('view engine', 'ejs')
 
 app.listen(port)
 
 app.get('/', (req, res) => {
-    res.send("Hello World")})
+    res.render("index")})
 
 
 app.get('/soma/:valor1/:valor2', (req, res) => {
