@@ -7,5 +7,27 @@
 </head>
 <body>
     <h1>Oi Mundo!</h1>
+
+    <form action="/pesquisar" method="get">
+        <labe for="nome">Name</labe>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome." required><br/>
+        <br/>
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" id="idade" placeholder="Digite sua idade." max="99" min="0" step="5"><br/>
+        <br/>
+        <label for="data">Data</label>
+        <input type="datetime-local" name="data" id="data"><br/>
+        <br/>
+        <label for="cor">Cor</label>
+        <input type="color" name="cor" id="cor"><br/>
+        <br/>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"><br/>
+        <br/>
+        <label for="interesse">Aceito os termos e politica de privacidade</label>
+        <input type="checkbox" name="interesse" id="interesse" required><br/>
+        <br/>
+        <input type="submit" value="Enviar" value="termoPolitica">
+    </form>
 </body>
 </html>
