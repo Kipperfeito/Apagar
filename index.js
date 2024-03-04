@@ -11,6 +11,13 @@ app.get('/', (req, res) => {
 app.get('/calculadora', (req, res) => {
     res.render('calculadora')
 })
+app.get('/tabela', (req, res) => {
+    res.render('tabela')
+})
+app.post('/tabela', (req, res) => {
+    var valor = parseInt(req.body.linhas)
+    res.render('tabela', {linhas:valor})
+})
 app.post('/calculadora', (req, res) => {
    const op = req.body.op;
    var v1 = parseInt(req.body.valor1)
@@ -28,7 +35,7 @@ app.post('/calculadora', (req, res) => {
     else if (op == 'Divisão') {
         resultado = (v1 / v2)
     }
-    res.send("Resultado é: "+ resultado)
+    res.render('calculadora', {op, resultado})
 })
 
 app.post('/pesquisar', (req, res) => {

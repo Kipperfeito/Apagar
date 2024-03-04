@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+</head>
+<body>
+   <form method="post">
+        <input type="number" name="linhas" id="linhas" placeholder="Digite um valor numérico" min="0" required>
+        <br/>
+        <input type="submit" value="Enviar">
+    </form>
+    <%if(typeof linhas !== 'undefined') {%>
+        <%for(let i=0; i<=linhas; i++){%>
+            </br>
+            <p><%=i%></p>
+        <%}%>
+    <%}%>
+</body>
+</html>
