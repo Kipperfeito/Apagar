@@ -13,7 +13,15 @@ app.get('/soma', (req, res) => {
 })
 
 app.post('/calculadora', (req, res) => {
-    res.send("O resultado da soma é: "+ (parseInt(req.body.valor1) + parseInt(req.body.valor2)))
+    if(req.body.op == 'Soma'){
+        res.send("O resultado da soma é: "+ (parseInt(req.body.valor1) + parseInt(req.body.valor2)))
+    }
+    else if(req.body.op == 'Subtração'){
+        res.send("O resultado da Subtração é: "+ (parseInt(req.body.valor1) - parseInt(req.body.valor2)))
+    }
+    else if(req.body.op == 'Multiplicação'){
+        res.send("O resultado da Multiplicação é: "+ (parseInt(req.body.valor1) * parseInt(req.body.valor2)))
+    }
 })
 
 app.post('/pesquisar', (req, res) => {
