@@ -8,20 +8,27 @@ app.listen(port)
 app.get('/', (req, res) => {
     res.render("index")})
     
-app.get('/soma', (req, res) => {
-    res.render('soma')
+app.get('/calculadora', (req, res) => {
+    res.render('calculadora')
 })
-
 app.post('/calculadora', (req, res) => {
-    if(req.body.op == 'Soma'){
-        res.send("O resultado da soma é: "+ (parseInt(req.body.valor1) + parseInt(req.body.valor2)))
+   const op = req.body.op;
+   var v1 = parseInt(req.body.valor1)
+   var v2 = parseInt(req.body.valor2)
+   let resultado;
+    if(op == 'Soma'){
+        resultado = (v1 + v2)
     }
-    else if(req.body.op == 'Subtração'){
-        res.send("O resultado da Subtração é: "+ (parseInt(req.body.valor1) - parseInt(req.body.valor2)))
+    else if(op == 'Subtração'){
+       resultado = (v1 - v2)
     }
-    else if(req.body.op == 'Multiplicação'){
-        res.send("O resultado da Multiplicação é: "+ (parseInt(req.body.valor1) * parseInt(req.body.valor2)))
+    else if(op == 'Multiplicação'){
+        resultado = (v1 * v2)
     }
+    else if (op == 'Divisão') {
+        resultado = (v1 / v2)
+    }
+    res.send("Resultado é: "+ resultado)
 })
 
 app.post('/pesquisar', (req, res) => {
