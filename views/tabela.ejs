@@ -9,13 +9,22 @@
    <form method="post">
         <input type="number" name="linhas" id="linhas" placeholder="Digite um valor numérico" min="0" required>
         <br/>
+        <input type="number" name="colunas" id="colunas" placeholder="Digite um valor numérico" min="0" required>
+        <br/>
         <input type="submit" value="Enviar">
     </form>
-    <%if(typeof linhas !== 'undefined') {%>
+    <%if(typeof linhas !== 'undefined'&&typeof colunas !=='undefined') {%>
+        <table>
+        <%let num =1;%>
         <%for(let i=0; i<=linhas; i++){%>
-            </br>
-            <p><%=i%></p>
+            <tr>
+            <%for(let l=0; l<=colunas; l++){%>
+                <td><%=num%></td>
+                <%num++%>
+            <%}%>
+            </tr>
         <%}%>
+        </table>
     <%}%>
 </body>
 </html>
