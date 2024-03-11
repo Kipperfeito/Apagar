@@ -1,3 +1,10 @@
+export function abriupload(req,res){
+    res.render('upload')
+}
+
+export function upload(req,res) {
+    res.send("<img src='/"+req.file.filename+"'>")
+}
 export function hello (req, res) {
     res.send("Hello")}
 
@@ -41,3 +48,4 @@ export function pesquisa (req, res) {
 export function pesquisado (req, res) {
     res.send("Dados Recebidos de "+ req.body.nome)
 }
+
