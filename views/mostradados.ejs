@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostra Dados</title>
+    <style>
+        body{
+            background-color: darkslateblue;
+        }
+        div{
+            background-color: aliceblue;
+            margin-top: auto;
+            margin: auto;
+            width: 600px;
+            text-align: center;
+        }
+        img{
+            width: 200px;
+        }
+        table{
+            width: 50%;
+            border: solid;
+            text-align: center;
+            margin-top: 50px;
+            margin:auto;
+        }
+        td, th {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src= "<%=foto%>" alt="Foto do usuario">
+        <br>
+        <table>
+            <tr>
+                <th>Nome:</th>
+                <td><%=nome%></td>
+                <th>Email:</th>
+                <td><%=email%></td>
+        </table>
+    </div>
+</body>
+</html>

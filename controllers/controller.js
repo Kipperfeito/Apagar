@@ -1,3 +1,5 @@
+import Usuario from '../modelos/usuario.js'
+
 export function abriupload(req,res){
     res.render('upload')
 }
@@ -49,3 +51,20 @@ export function pesquisado (req, res) {
     res.send("Dados Recebidos de "+ req.body.nome)
 }
 
+export function abretela (req, res) {
+    res.render('usuario')
+}
+
+export async function mostradados (req, res) {
+    const usuario = new Usuario ({
+        nome: req.params.nome,
+        email: req.params.email,
+        senha: req.params.senha,
+        foto: req.file.filename,
+        datanasc: req.params.datanasc
+    })
+
+    console.log(usuario);
+
+    await usuario.save();
+}
