@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostra Usuario</title>
+</head>
+
+<body>
+    <table border="2px">
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Foto</th>
+            <th>Editar</th>
+            <% Usuarios.forEach(function(usuario) {%>
+        <tr>
+            <td>
+                <%=usuario.nome%>
+            </td>
+            <td>
+                <%=usuario.email%>
+            </td>
+            <td><img src="/<%=usuario.foto%>" width="200px" alt="Foto do Usuario"></td>
+            <td><a href="/editarusuario/<%=usuario.id%>">Editar</td>
+        </tr>
+        <%})%>
+    </table>
+</body>
+
+</html>
