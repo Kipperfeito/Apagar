@@ -1,0 +1,28 @@
+<%-include('cabeca.ejs')%>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-floating mb-3">
+        <input type="text" class='form-control' name="titulo" id="titulo" placeholder="Digite seu titulo.">
+        <label class="form-label" for="titulo">Titulo:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class='form-control' name="texto" id="texto" placeholder="Digite seu texto.">
+        <label class="form-label" for="texto">Texto:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class='form-control' name="tags" id="tags" placeholder="Digite sua tags.">
+        <label class="form-label" for="tags">Tags:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="file" class='form-control' name="foto" id="foto">
+        <label class="form-label" for="foto">Foto:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="date" class='form-control' name="datanasc" id="datanasc">
+        <label class="form-label" for="datanasc">Data</label>
+    </div>
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary mb-3" value="Enviar">
+        <input type="reset" class="btn btn-secundary mb-3" value="Limpar">
+    </div>
+</form>
+<%-include('rodape.ejs') %>

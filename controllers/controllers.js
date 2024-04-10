@@ -1,4 +1,5 @@
 import Usuario from '../models/usuario.js'
+import postH from '../models/post.js'
 
 export function helloworld(req,res){
     res.render('index')
@@ -119,5 +120,34 @@ export async function deletarusuario(req,res){
 }
 
 export async function abrelogin(req, res){
-    res.render('login.ejs')
+    await res.render('login.ejs')
+}
+
+export async function abrepostadd(req, res){
+    await res.render('post.ejs')
+}
+export async function postadd(req,res){
+    const Post = new postH({
+        titulo: req.body.titulo,
+        texto: req.body.texto,
+        tags: req.body.tags,
+        foto: req.file.filename,
+        datanasc: req.body.datanasc,
+        status: "postado"
+    })
+
+    console.log(Post)
+
+    await Post.save()
+    res.render('listapost')
+
+}
+export async function listapost(req, res) {
+    let cadastros = await postH.find({})
+    res.render('listapost',{postH:cadastros})
+}
+
+export async function filtrapost(req, res) {
+    let cadastros = await postH.find({nome: new RegExp(req.body.pesquisar, 'i')})
+    res.render('mostrausuarios',{Usuarios:cadastros})
 }

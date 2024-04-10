@@ -13,7 +13,11 @@ import {
     buscarusuarios,
     abretelaeditar,
     editarusuario,
-    abrelogin
+    abrelogin,
+    abrepostadd,
+    postadd,
+    listapost,
+    filtrapost
 } from '../controllers/controllers.js';
 
 import multer from 'multer';
@@ -39,32 +43,10 @@ router.post('/', passport.authenticate('local', {
     failureRedirect: '/'
 }));
 
-/*
-router.get('/', helloworld)
+router.get('/postadd', abrepostadd)
+router.post('/postadd', postadd)
 
-router.get('/diego', hellonome)
-
-//rota para abrir a página calculadora.ejs
-router.get('/calculadora', abrecalculadora)
-
-//rota para receber dados da calculadora e mostrar o resultado final
-router.post('/calculadora', calculadora)
-
-router.get('/tabela', abretabela)
-
-router.post('/tabela', tabela)
-
-router.get('/upload', abrirupload)
-router.post('/upload', foto.single('foto') , upload)
-
-router.get('/:nome', qualquernome)
-
-router.get('/:nome/:sobrenome', nomesobrenome)
-
-router.get('/soma/:x/:y', soma)
-
-router.post('/pesquisar', pesquisar)
-
-*/
+router.get('/postlist', listapost)
+router.post('/postlist', filtrapost)
 
 export default router;
